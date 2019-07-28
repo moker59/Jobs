@@ -1,0 +1,10 @@
+# Faster builds without sudo.
+sudo: false
+dist: trusty
+language: java
+notifications:
+  email: false
+cache:
+  directories:
+  - "$HOME/.cache"
+script: mvn
