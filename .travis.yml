@@ -8,3 +8,13 @@ cache:
   directories:
   - "$HOME/.cache"
 script: mvn
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GH_TOKEN
+  file_glob: true
+  file:
+    - "target/*.jar"
+  on:
+    tags: true
+    all_branches: true
